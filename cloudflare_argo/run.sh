@@ -6,5 +6,3 @@ echo $(bashio::config 'config_file_content_base64') | base64 -d > /etc/cloudflar
 bashio::log.info "Running cloudflare tunnel..."
 
 cloudflared tunnel --config /etc/cloudflared/config.yml run
-
-cloudflared access tcp --hostname mcserver.pwisetthon.com --url localhost:8123
