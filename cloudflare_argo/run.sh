@@ -7,4 +7,4 @@ bashio::log.info "Running cloudflare tunnel..."
 
 cloudflared tunnel --config /etc/cloudflared/config.yml run
 
-cloudflared access tcp --hostname mcserver.pwisetthon.com --url 192.168.31.210:25565
+cloudflared access tcp --hostname mcserver.pwisetthon.com --url localhost:8123
