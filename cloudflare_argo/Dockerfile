@@ -13,6 +13,8 @@ RUN \
     && apk add --no-cache libc6-compat yq \
     && wget -O /usr/local/bin/cloudflared https://github.com/cloudflare/cloudflared/releases/$CVERSION/cloudflared-linux-$ARCH && chmod +x /usr/local/bin/cloudflared
 
+ENV TZ="Asia/Bangkok"
+
 RUN cloudflared -v
 
 COPY run.sh /
