@@ -11,10 +11,12 @@
   "map": ["config:rw"],
   "options": {
     "credential_file_content": "{}",
-    "config_file_content_base64": ""
+    "config_file_content_base64": "",
+    "config_file_content": ""
   },
   "schema": {
     "credential_file_content": "str",
-    "config_file_content_base64": "str"
+    "config_file_content_base64": "str",
+    "config_file_content": "str"
   }
 }
