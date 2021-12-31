@@ -11,4 +11,4 @@ cloudflared update
 
 bashio::log.info "Running cloudflared tunnel..."
 
-cloudflared tunnel --config /etc/cloudflared/config.yml run --force
+cloudflared tunnel --config /etc/cloudflared/config.yml run --autoupdate-freq 1h
