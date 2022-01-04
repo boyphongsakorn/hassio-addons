@@ -1,0 +1,11 @@
+{
+  "name": "Playit.gg",
+  "version": "0.0.1",
+  "slug": "playitgg",
+  "description": "",
+  "url": "https://github.com/boyphongsakorn/hassio-addons",
+  "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
+  "startup": "application",
+  "boot": "auto",
+  "host_network": true
+}

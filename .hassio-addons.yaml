@@ -5,3 +5,7 @@ addons:
     repository: hassio-addons/cloudflare_argo
     target: cloudflare_argo
     image: cloudflare_argo
+  playitgg:
+    repository: hassio-addons/playitgg
+    target: playitgg
+    image: playitgg
