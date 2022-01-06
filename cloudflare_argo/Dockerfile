@@ -14,6 +14,7 @@ RUN \
     && wget -O /usr/local/bin/cloudflared https://github.com/cloudflare/cloudflared/releases/$CVERSION/cloudflared-linux-$ARCH && chmod +x /usr/local/bin/cloudflared
 
 ENV TZ="Asia/Bangkok"
+#ENV BR="${ARCH}"
 
 RUN cloudflared -v
 

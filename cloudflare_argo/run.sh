@@ -8,7 +8,9 @@ echo $(bashio::config 'config_file_content_base64') | base64 -d > /etc/cloudflar
 
 bashio::log.info "Running cloudflared update..."
 
-cloudflared update
+#cloudflared update
+
+wget -O /usr/local/bin/cloudflared https://github.com/cloudflare/cloudflared/releases/$CVERSION/cloudflared-linux-$ARCH && chmod +x /usr/local/bin/cloudflared
 
 bashio::log.info "Running cloudflared tunnel..."
 
