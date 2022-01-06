@@ -10,6 +10,31 @@ bashio::log.info "Running cloudflared update..."
 
 #cloudflared update
 
+if [ $CHECKARCH == "aarch64" ]
+then
+   export WOW=arm64
+fi
+
+if [ $CHECKARCH == "amd64" ]
+then
+   export WOW=amd64
+fi
+
+if [ $CHECKARCH == "armhf" ]
+then
+   export WOW=arm
+fi
+
+if [ $CHECKARCH == "armv7" ]
+then
+   export WOW=arm
+fi
+
+if [ $CHECKARCH == "i386" ]
+then
+   export WOW=386
+fi
+
 echo "https://github.com/cloudflare/cloudflared/releases/$CVERSION/cloudflared-linux-$WOW"
 
 wget -O /usr/local/bin/cloudflared https://github.com/cloudflare/cloudflared/releases/$CVERSION/cloudflared-linux-$WOW && chmod +x /usr/local/bin/cloudflared
