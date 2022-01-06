@@ -2,7 +2,7 @@ ARG BUILD_FROM
 FROM $BUILD_FROM
 
 ARG BUILD_ARCH
-ENV RUNARCH
+ENV RUNARCH=
 RUN \
     CVERSION="latest/download" \
     && if [[ "${BUILD_ARCH}" = "aarch64" ]]; then RUNARCH="arm64"; fi \
