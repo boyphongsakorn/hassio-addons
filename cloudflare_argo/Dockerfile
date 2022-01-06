@@ -2,19 +2,21 @@ ARG BUILD_FROM
 FROM $BUILD_FROM
 
 ARG BUILD_ARCH
+ARG RUNARCH
 RUN \
     CVERSION="latest/download" \
-    ARCH="${BUILD_ARCH}" \
-    && if [[ "${BUILD_ARCH}" = "aarch64" ]]; then ARCH="arm64"; fi \
-    && if [[ "${BUILD_ARCH}" = "amd64" ]]; then ARCH="amd64"; fi \
-    && if [[ "${BUILD_ARCH}" = "armhf" ]]; then ARCH="arm"; fi \
-    && if [[ "${BUILD_ARCH}" = "armv7" ]]; then ARCH="arm"; fi \
-    && if [[ "${BUILD_ARCH}" = "i386" ]]; then ARCH="386"; fi \
+    RUNARCH="${BUILD_ARCH}" \
+    && if [[ "${BUILD_ARCH}" = "aarch64" ]]; then RUNARCH="arm64"; fi \
+    && if [[ "${BUILD_ARCH}" = "amd64" ]]; then RUNARCH="amd64"; fi \
+    && if [[ "${BUILD_ARCH}" = "armhf" ]]; then RUNARCH="arm"; fi \
+    && if [[ "${BUILD_ARCH}" = "armv7" ]]; then RUNARCH="arm"; fi \
+    && if [[ "${BUILD_ARCH}" = "i386" ]]; then RUNARCH="386"; fi \
     && apk add --no-cache libc6-compat yq \
-    && wget -O /usr/local/bin/cloudflared https://github.com/cloudflare/cloudflared/releases/$CVERSION/cloudflared-linux-$ARCH && chmod +x /usr/local/bin/cloudflared
+    && wget -O /usr/local/bin/cloudflared https://github.com/cloudflare/cloudflared/releases/$CVERSION/cloudflared-linux-$RUNARCH && chmod +x /usr/local/bin/cloudflared
 
 ENV TZ="Asia/Bangkok"
-#ENV BR="${ARCH}"
+ENV CVERSION="latest/download"
+ENV ARCH="${RUNARCH}"
 
 RUN cloudflared -v
 
