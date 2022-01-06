@@ -3,8 +3,6 @@ FROM $BUILD_FROM
 
 ARG BUILD_ARCH
 
-ENV WOW=""
-
 RUN \
     CVERSION="latest/download" \
     ARCH="${BUILD_ARCH}" \
