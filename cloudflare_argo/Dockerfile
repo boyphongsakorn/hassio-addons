@@ -13,12 +13,9 @@ RUN \
     && apk add --no-cache libc6-compat yq \
     && wget -O /usr/local/bin/cloudflared https://github.com/cloudflare/cloudflared/releases/$CVERSION/cloudflared-linux-$RUNARCH && chmod +x /usr/local/bin/cloudflared
 
-RUN echo "$RUNARCH"
-RUN echo ${RUNARCH}
-
 ENV TZ="Asia/Bangkok"
 ENV CVERSION="latest/download"
-ENV ARCH=${RUNARCH}
+ENV ARCH=$RUNARCH
 
 RUN cloudflared -v
 
