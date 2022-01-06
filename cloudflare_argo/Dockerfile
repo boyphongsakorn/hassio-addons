@@ -16,7 +16,7 @@ RUN \
 
 ENV TZ="Asia/Bangkok"
 ENV CVERSION="latest/download"
-ENV ARCH="${RUNARCH}"
+ENV ARCH=${RUNARCH}
 
 RUN cloudflared -v
 
