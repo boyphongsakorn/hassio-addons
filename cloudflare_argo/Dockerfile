@@ -2,7 +2,7 @@ ARG BUILD_FROM
 FROM $BUILD_FROM
 
 ARG BUILD_ARCH
-ARG RUNARCH
+ENV RUNARCH
 RUN \
     CVERSION="latest/download" \
     && if [[ "${BUILD_ARCH}" = "aarch64" ]]; then RUNARCH="arm64"; fi \
@@ -15,7 +15,7 @@ RUN \
 
 ENV TZ="Asia/Bangkok"
 ENV CVERSION="latest/download"
-ENV ARCH="${RUNARCH}"
+#ENV ARCH="${RUNARCH}"
 
 RUN cloudflared -v
 
