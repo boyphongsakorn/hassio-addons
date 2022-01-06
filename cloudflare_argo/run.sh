@@ -10,6 +10,8 @@ bashio::log.info "Running cloudflared update..."
 
 #cloudflared update
 
+echo "https://github.com/cloudflare/cloudflared/releases/$CVERSION/cloudflared-linux-$ARCH"
+
 wget -O /usr/local/bin/cloudflared https://github.com/cloudflare/cloudflared/releases/$CVERSION/cloudflared-linux-$ARCH && chmod +x /usr/local/bin/cloudflared
 
 bashio::log.info "Running cloudflared tunnel..."
