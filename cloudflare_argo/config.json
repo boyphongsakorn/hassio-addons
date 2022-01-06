@@ -1,6 +1,6 @@
 {
   "name": "Cloudflared for Cloudflare Argo Tunnel",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "slug": "cloudflare-argo",
   "description": "Connect to Cloudflare Argo tunnel Using Cloudflared to expose Home Assistant to the internet.",
   "url": "https://github.com/boyphongsakorn/hassio-addons",
