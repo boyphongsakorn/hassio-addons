@@ -1,6 +1,6 @@
-#FROM ubuntu:bionic
-ARG BUILD_FROM
-FROM $BUILD_FROM
+FROM ubuntu:bionic
+#ARG BUILD_FROM
+#FROM $BUILD_FROM
 ARG BUILD_ARCH
 RUN mkdir /app
 WORKDIR '/app'
