@@ -5,8 +5,8 @@ FROM ubuntu:bionic
 RUN mkdir /app
 WORKDIR '/app'
 #RUN apt-get update
-#RUN apt-get install ca-certificates -y
-#RUN update-ca-certificates
+RUN apt-get install ca-certificates -y
+RUN update-ca-certificates
 COPY . /app
 RUN \
     ARCH="" \
@@ -15,7 +15,7 @@ RUN \
     && if [[ `uname -m` = "armhf" ]]; then ARCH="aarch64"; fi \
     && if [[ `uname -m` = "armv7l" ]]; then ARCH="armv7"; fi \
     && if [[ `uname -m` = "ppc64le" ]]; then ARCH="aarch64"; fi \
-    && apt install wget \
+    && apt-get install wget \
     && wget -O /app/playit https://playit.gg/downloads/playit-$ARCH-0.4.6
 RUN chmod 0755 /app/playit
 CMD /app/playit
