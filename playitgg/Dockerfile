@@ -15,7 +15,7 @@ RUN \
     && if [[ `uname -m` = "armhf" ]]; then ARCH="aarch64"; fi \
     && if [[ `uname -m` = "armv7l" ]]; then ARCH="armv7"; fi \
     && if [[ `uname -m` = "ppc64le" ]]; then ARCH="aarch64"; fi \
-    && apk add --no-cache libc6-compat yq \
+    && apt install wget \
     && wget -O /app/playit https://playit.gg/downloads/playit-$ARCH-0.4.6
 RUN chmod 0755 /app/playit
 CMD /app/playit
