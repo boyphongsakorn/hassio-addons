@@ -4,8 +4,7 @@ FROM ubuntu:bionic
 #ARG BUILD_ARCH
 RUN mkdir /app
 WORKDIR '/app'
-#RUN apt-get update
-RUN apt-get install ca-certificates -y
+RUN apt-get update && apt-get install -y apt-transport-https ca-certificates
 RUN update-ca-certificates
 COPY . /app
 RUN \
